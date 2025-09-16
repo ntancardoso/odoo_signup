@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odoo Trial Signup - Start Your Business Journey</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-rocket"></i>
+                <span>Odoo Sign-Up</span>
+            </div>
+            <p class="tagline">Transform your business with enterprise-grade ERP</p>
+        </header>
+
+        <!-- Main Form -->
+        <main class="main-content">
+            <div class="form-container">
+                <div class="form-header">
+                    <h1>Get Started Today</h1>
+                    <p>Create your Odoo instance in minutes</p>
+                </div>
+
+                <form id="signupForm" class="signup-form">
+                    <!-- Account Information -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-user-circle"></i> Account Details</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="username">Subdomain <span class="required">*</span></label>
+                                <div class="input-with-suffix">
+                                    <input type="text" id="username" name="username" required
+                                           placeholder="yourcompany" maxlength="20">
+                                    <span class="suffix">.{{.Domain}}</span>
+                                </div>
+                                <small>Your unique URL will be: <span id="preview-url">yourcompany.{{.Domain}}</span></small>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" required
+                                       placeholder="admin@yourcompany.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password <span class="required">*</span></label>
+                                <input type="password" id="password" name="password" required
+                                       placeholder="Create a strong password" minlength="8">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Personal Information -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-id-card"></i> Personal Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name <span class="required">*</span></label>
+                                <input type="text" id="firstName" name="firstName" required
+                                       placeholder="John">
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name <span class="required">*</span></label>
+                                <input type="text" id="lastName" name="lastName" required
+                                       placeholder="Doe">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone"
+                                       placeholder="+63 912 345 6789">
+                                <small>Format: +63 followed by 10 digits</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Company Information -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-building"></i> Company Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="companyName">Company Name <span class="required">*</span></label>
+                                <input type="text" id="companyName" name="companyName" required
+                                       placeholder="Your Company Ltd">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="industry">Industry</label>
+                                <select id="industry" name="industry">
+                                    <option value="">Select Industry</option>
+                                    <option value="technology">Technology</option>
+                                    <option value="manufacturing">Manufacturing</option>
+                                    <option value="retail">Retail & E-commerce</option>
+                                    <option value="healthcare">Healthcare</option>
+                                    <option value="finance">Finance & Banking</option>
+                                    <option value="education">Education</option>
+                                    <option value="construction">Construction</option>
+                                    <option value="consulting">Consulting</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="companySize">Company Size</label>
+                                <select id="companySize" name="companySize">
+                                    <option value="">Select Size</option>
+                                    <option value="1-10">1-10 employees</option>
+                                    <option value="11-50">11-50 employees</option>
+                                    <option value="51-200">51-200 employees</option>
+                                    <option value="201-1000">201-1000 employees</option>
+                                    <option value="1000+">1000+ employees</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="country">Country <span class="required">*</span></label>
+                                <select id="country" name="country" required>
+                                    <option value="">Select Country</option>
+                                    <!-- Countries will be populated by JavaScript -->
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Terms and Submit -->
+                    <div class="form-section">
+                        <div class="terms">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <span class="checkmark"></span>
+                                I agree to the <a href="#" target="_blank">Terms of Service</a> and <a href="#" target="_blank">Privacy Policy</a>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <span class="btn-text">Create My Odoo Instance</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+
+                        <p class="disclaimer">
+                            By signing up, you'll get a fully configured Odoo instance with your data pre-filled.
+                            You can start using it immediately after signup.
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; <span id="currentYear"></span> {{.OdooCompany}}. Powered by Odoo 18. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Loading Modal -->
+    <div id="loadingModal" class="modal">
+        <div class="modal-content">
+            <div class="spinner"></div>
+            <h3>Creating Your Instance</h3>
+            <p>Please wait while we set up your dedicated Odoo environment...</p>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content success">
+            <button class="close-modal" onclick="document.getElementById('successModal').style.display='none'; document.body.style.overflow=''">&times;</button>
+            <i class="fas fa-check-circle"></i>
+            <h3>Welcome to Odoo!</h3>
+            <p>Your instance has been created successfully.</p>
+            <div class="instance-details">
+                <p><strong>Your URL:</strong> <a id="instanceUrl" href="#" target="_blank"></a></p>
+                <p><strong>Admin Email:</strong> <span id="adminEmail"></span></p>
+            </div>
+            <button class="btn-primary" id="accessInstanceBtn">
+                <span class="btn-text">Access Your Instance</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
